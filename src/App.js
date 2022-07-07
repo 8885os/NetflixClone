@@ -2,7 +2,7 @@ import Logged from "./components/Logged";
 import { Routes, Route } from "react-router-dom";
 import Notlogged from "./components/Notlogged";
 import Signupform from "./components/Signupform";
-import firebase from 'firebase/app'
+import firebase from 'firebase/compat/app'
 import 'firebase/firestore'
 import 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
