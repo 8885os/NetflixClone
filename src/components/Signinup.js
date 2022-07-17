@@ -5,9 +5,11 @@ const Signinup = () => {
     return (
         <div className='sign'>
             <Link to='/signup'>
-                <button>Sign Up</button>
+                <button className='redbutton'>Sign Up</button>
             </Link>
-            <button>Sign In</button>
+            <Link to='/signin'>
+                <button className='redbutton'>Sign In</button>
+            </Link>
 
         </div>
 

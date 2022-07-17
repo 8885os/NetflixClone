@@ -6,13 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import { FirebaseContext } from './context/FirebaseContext';
 import { Firebase } from './firebase/config'
+import { ProvideAuth } from './context/AuthContext';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
         <FirebaseContext.Provider value={{ Firebase }}>
-            <React.StrictMode>
-                <App />
-            </React.StrictMode>
+            <ProvideAuth>
+                <React.StrictMode>
+                    <App />
+                </React.StrictMode>
+            </ProvideAuth>
         </FirebaseContext.Provider>
     </Router>
 );

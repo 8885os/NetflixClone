@@ -1,7 +1,9 @@
-import Logged from "./components/Logged";
 import { Routes, Route } from "react-router-dom";
+import Logged from './components/Logged'
 import Notlogged from "./components/Notlogged";
 import Signupform from "./components/Signupform";
+import Signin from "./components/Signin";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 function App() {
@@ -9,9 +11,17 @@ function App() {
         <div className="App">
             <Routes>
                 <Route path="/" element={<Notlogged />} />
-                <Route path="/home" element={<Logged />} />
+                <Route path='/home/*'
+                    element={
+                        <PrivateRoute>
+                            <Logged />
+                        </PrivateRoute>
+                    }
+                />
                 <Route path="/signup" element={<Signupform />} />
+                <Route path="/signin" element={<Signin />} />
             </Routes>
+
         </div>
     );
 }
