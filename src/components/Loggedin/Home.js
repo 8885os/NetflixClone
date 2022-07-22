@@ -37,7 +37,7 @@ const Home = ({ setComponent, movieSetter, showSetter }) => {
             })
 
 
-    }, [])
+    }, [movies, shows, topRatedMovie, topRatedShow])
 
     useEffect(() => {
         setMix([])
