@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&family=Montserrat:wght@200&family=Poppins:wght@100&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova&family=Montserrat:wght@200&family=Poppins:wght@100&family=Roboto&display=swap');
+@import url('http://fonts.cdnfonts.com/css/netflix-font');
 
 * {
     box-sizing: border-box;
@@ -9,6 +10,26 @@
 
 body {
     background-color: rgb(18, 18, 18);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 100%;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .side-bar {
@@ -75,7 +96,7 @@ input:focus {
 .formclass {
     position: relative;
     left: 50%;
-    top: 10rem;
+    top: 5rem;
     transform: translateX(-50%);
     background-color: rgba(45, 45, 45, 0.4);
     border: 3px solid transparent;
@@ -94,7 +115,7 @@ input:focus {
 .formclassin {
     position: relative;
     left: 50%;
-    top: 10rem;
+    top: 5rem;
     transform: translateX(-50%);
     background-color: rgba(45, 45, 45, 0.4);
     border: 3px solid transparent;
@@ -104,7 +125,7 @@ input:focus {
     display: flex;
     justify-content: space-between;
     padding: 3rem;
-    padding-top: 7rem;
+    padding-top: 5rem;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -130,10 +151,11 @@ input:focus {
 }
 
 #netflixicon {
-    position: fixed;
-    right: 50%;
-    transform: translateX(50%);
-    top: 3%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    height: 200px;
     width: 200px;
     cursor: pointer;
 }
@@ -163,12 +185,6 @@ input:focus {
     width: 100%;
 }
 
-.searchbar {
-    right: 40%;
-    top: 10rem;
-
-}
-
 .components {
     color: white;
 }
@@ -180,20 +196,32 @@ input:focus {
 .component-div {
     position: relative;
     display: flex;
-    top: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 4rem;
     left: 8rem;
     width: 80%;
     height: 70vh;
+    gap: 3rem;
+}
 
-
+.search-component-div {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    top: 2rem;
+    left: 5rem;
+    width: 90%;
+    height: 70vh;
+    gap: 3rem;
 }
 
 .search {
     position: relative;
     height: 3rem;
     display: flex;
-    width: 70vw;
-    top: 50%;
+    width: 75vw;
     height: 2.5rem;
     outline: none;
     border-radius: 5px;
@@ -207,6 +235,254 @@ input:focus {
 }
 
 .item-holder {
+    width: 100%;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.item-poster {
+    width: 130px;
+    height: 200px;
+}
+
+.item-poster-slider {
+    width: 160px;
+    object-fit: cover;
+}
+
+.items {
+    position: relative;
+    margin-left: 10rem;
+    display: inline-block;
+    width: 100%;
+
+}
+
+.search-item {
+    position: relative;
+    display: inline-flex;
+    cursor: pointer;
+    max-width: 200px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.item {
+    position: relative;
     display: flex;
-    gap: 3rem;
+    flex-direction: column;
+    cursor: pointer;
+    max-width: 200px;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.welcome-screen {
+    position: relative;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 400px;
+    height: 100%;
+}
+
+
+.netflix-text {
+    position: relative;
+    font-family: 'Bebas Neue';
+    color: red;
+    font-size: 18px;
+    text-align: center;
+}
+
+.home-icon {
+    width: 30rem;
+    position: relative;
+    display: flex;
+}
+
+.item-results {
+    height: 100vh;
+    width: 80%;
+}
+
+.items-searched {
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    gap: 1rem;
+}
+
+.search-holder {
+    position: relative;
+    display: flex;
+    flex-direction: col;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search-component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    top: 2rem;
+    align-items: center;
+}
+
+.titles {
+    width: 130px;
+}
+
+.error {
+    color: white;
+    font-size: 30px;
+}
+
+.titles-slider {
+    max-width: 160px;
+}
+
+.movie-show-div {
+    position: relative;
+    left: 8rem;
+}
+
+
+.movie-show {
+    display: flex;
+    position: relative;
+    top: 10rem;
+}
+
+.movie-show-poster {
+    width: 300px;
+    height: 533px;
+
+}
+
+.movie-show-desc-holder {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    left: 40rem;
+    overflow-wrap: break-word;
+    width: 50%;
+    align-items: center;
+}
+
+.movie-show-title {
+    position: relative;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    text-align: center;
+}
+
+.movie-show-desc {
+    position: relative;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    text-align: center;
+    font-weight: 300;
+}
+
+.movie-show-genres {
+    position: relative;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 0, 0);
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    gap: 5px;
+}
+
+.avatar-holder {
+    position: relative;
+    display: flex;
+    bottom: 29%;
+    gap: 1rem;
+    align-items: center;
+}
+
+.rating {
+    text-align: center;
+    border: solid 1px rgb(119, 118, 118);
+    padding: 4px;
+}
+
+.play {
+    position: relative;
+    color: red;
+    font-size: 40px;
+}
+
+.movie-logo {
+    width: 200px;
+}
+
+.select-seasons {
+    border-color: white;
+}
+
+.form {
+    color: 'white';
+}
+
+.season_position {
+    position: relative;
+    display: inline-block;
+    width: 300px;
+}
+
+.test {
+    border: 1px solid white;
+    width: 100%;
+    padding: 0%;
+}
+
+.episode-image {
+    width: 100px;
+}
+
+.season-display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h5 {
+    font-size: 17px;
+    font-weight: 200;
+}
+
+.episode-overview {
+    position: relative;
+    font-family: 'Bebas Neue';
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+}
+
+.form-select {
+    position: absolute;
+    left: 6rem;
+    top: 14rem;
 }

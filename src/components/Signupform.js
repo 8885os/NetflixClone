@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import netflixicon from '../images/netflixicon.png'
+import netflixicon from './images/netflixicon.png'
 import { useAuth } from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 import { VscHome } from 'react-icons/vsc'

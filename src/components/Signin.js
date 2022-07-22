@@ -1,5 +1,5 @@
 import React from 'react'
-import netflixicon from '../images/netflixicon.png'
+import netflixicon from './images/netflixicon.png'
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { VscHome } from 'react-icons/vsc'

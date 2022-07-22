@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Logged from './components/Logged'
-import Notlogged from "./components/Notlogged";
+import Logged from './components/Loggedin/Logged'
+import Notlogged from "./components/NotLoggedIn/Notlogged";
 import Signupform from "./components/Signupform";
 import Signin from "./components/Signin";
 import PrivateRoute from "./components/PrivateRoute";
