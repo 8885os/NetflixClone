@@ -10,7 +10,7 @@ function App() {
     return (
         <div className="App">
             <Routes>
-                <Route path="/" element={<Notlogged />} />
+                <Route path="/" element={<Notlogged />}> </Route>
                 <Route path='/home/*'
                     element={
                         <PrivateRoute>
