@@ -1,2 +1,2 @@
 ### Netflix Clone
-#### Deployed At: netflix-clone-61df7.firebaseapp.com
+#### Deployed At: https://netflix-clone-61df7.firebaseapp.com
