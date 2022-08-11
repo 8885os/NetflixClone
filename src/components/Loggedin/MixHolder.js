@@ -36,12 +36,16 @@ const MixHolder = ({ items, setComponent, movieSetter, showSetter }) => {
         }
     }
 
+    if (!items) {
+        return <h1> Loading ....</h1>
+    }
+
     return (
         <div className='slider'>
             {console.log(items)}
             {items.map(item => (
                 <div key={`mix${item.id}`} className='item' >
-                    <img className='item-poster-slider' src={baseurl + item['poster_path']} alt='movieimage' onClick={() => setItem(item, item.id)}></img>
+                    <img loading='lazy' className='item-poster-slider' src={baseurl + item['poster_path']} alt='movieimage' onClick={() => setItem(item, item.id)}></img>
                     <h3 className='titles-slider'>{item['title'] ? item['title'] : item['original_name']}</h3>
                 </div>
             ))}

@@ -47,19 +47,23 @@ const Logged = () => {
             <div>
                 <Sidebar setComponent={setComponent} />
             </div>
+            <div className='margin-panel'>
 
-            <div className='sign'>
-                <Link to="/">
-                    <button id='signout' className='redbutton' onClick={onSignOut}>Sign Out</button>
-                </Link>
+                <div className='sign'>
+                    <Link to="/" className='signout'>
+                        <button className='redbutton' onClick={onSignOut}>Sign Out</button>
+                    </Link>
 
+                </div>
             </div>
-            <div className='components'>
-                {componentsShown.homeShown && <Home setComponent={setComponent} movieSetter={setMovie} showSetter={setShow} />}
-                {componentsShown.searchShown && <Search setComponent={setComponent} movieSetter={setMovie} showSetter={setShow} />}
-                {componentsShown.showsShown && <Shows show={currentShow} />}
-                {componentsShown.moviesShown && <Movies movie={currentMovie} />}
+            <div className="margin-panel">
+                <div className='components'>
+                    {componentsShown.homeShown && <Home setComponent={setComponent} movieSetter={setMovie} showSetter={setShow} />}
+                    {componentsShown.searchShown && <Search setComponent={setComponent} movieSetter={setMovie} showSetter={setShow} />}
+                    {componentsShown.showsShown && <Shows show={currentShow} />}
+                    {componentsShown.moviesShown && <Movies movie={currentMovie} />}
 
+                </div>
             </div>
 
         </div>

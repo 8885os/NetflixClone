@@ -15,6 +15,10 @@ const ShowHolder = ({ items, setComponent, showSetter }) => {
         })
     }
 
+    if (!items) {
+        return <h1> Loading ....</h1>
+    }
+
     return (
         <div className='slider'>
             {items.map(item => (

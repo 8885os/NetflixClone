@@ -14,6 +14,10 @@ const MovieHolder = ({ items, setComponent, movieSetter }) => {
         })
     }
 
+    if (!items) {
+        return <h1> Loading ....</h1>
+    }
+
     return (
         <div className='slider'>
 

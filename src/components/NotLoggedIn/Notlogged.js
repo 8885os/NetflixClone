@@ -1,12 +1,10 @@
 import React from 'react'
-import Signinup from '../Signinup'
 import WelcomeScreen from './WelcomeScreen'
 
 const Notlogged = () => {
 
     return (
-        <div>
-            <Signinup />
+        <div className='not-logged'>
             <WelcomeScreen />
         </div>
     )

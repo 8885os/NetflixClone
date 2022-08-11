@@ -8,9 +8,22 @@
     padding: 0;
 }
 
+:root {
+    --side-margin: 80px
+}
+
 body {
     background-color: rgb(18, 18, 18);
     overflow-x: hidden;
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+}
+
+.App {
+    height: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -34,7 +47,7 @@ body {
 
 .side-bar {
     position: fixed;
-    height: 100vh;
+    height: 120vh;
     width: 80px;
     display: flex;
     padding: 1rem;
@@ -58,27 +71,26 @@ li {
 }
 
 .redbutton {
-    display: flex;
+    width: 12%;
     background-color: #e50914;
-    line-height: normal;
+    display: block;
     padding: 7px 17px;
     font-weight: 400;
-    font-size: 0.71rem;
-    float: right;
     border: 1px solid transparent;
     border-radius: 10px;
-    height: 100%;
-    width: 5rem;
     cursor: pointer;
     color: white;
+    width: fit-content;
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
 }
 
 .sign {
-    position: fixed;
-    display: flex;
-    right: 3%;
-    top: 2%;
-    gap: 4%;
+    width: 100%;
+    height: 2rem;
+    position: relative;
+    display: block;
 }
 
 
@@ -96,7 +108,7 @@ input:focus {
 .formclass {
     position: relative;
     left: 50%;
-    top: 5rem;
+    top: 4rem;
     transform: translateX(-50%);
     background-color: rgba(45, 45, 45, 0.4);
     border: 3px solid transparent;
@@ -110,12 +122,13 @@ input:focus {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-bottom: 1rem;
 }
 
 .formclassin {
     position: relative;
     left: 50%;
-    top: 5rem;
+    top: 4rem;
     transform: translateX(-50%);
     background-color: rgba(45, 45, 45, 0.4);
     border: 3px solid transparent;
@@ -129,6 +142,7 @@ input:focus {
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 }
 
 .inputholder {
@@ -150,14 +164,21 @@ input:focus {
     font-size: 1rem;
 }
 
-#netflixicon {
+.netflix-icon {
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 2rem;
-    height: 200px;
-    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
     cursor: pointer;
+}
+
+.img-holder {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .homeicon {
@@ -180,13 +201,20 @@ input:focus {
     color: rgb(0, 123, 254);
 }
 
-#signout {
+.signout {
+    display: block;
     font-size: 13px;
+    justify-content: center;
     width: 100%;
 }
 
 .components {
+    position: relative;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 80px;
 }
 
 .list-icons {
@@ -198,11 +226,12 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 4rem;
-    left: 8rem;
-    width: 80%;
-    height: 70vh;
+    width: 90%;
     gap: 3rem;
+}
+
+.margin-panel {
+    width: 100%;
 }
 
 .search-component-div {
@@ -210,19 +239,23 @@ input:focus {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    top: 2rem;
-    left: 5rem;
-    width: 90%;
-    height: 70vh;
-    gap: 3rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 5rem;
+}
+
+.search-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search {
     position: relative;
-    height: 3rem;
     display: flex;
-    width: 75vw;
-    height: 2.5rem;
+    width: 70%;
     outline: none;
     border-radius: 5px;
     border: 1px solid rgb(0, 0, 0);
@@ -257,6 +290,7 @@ input:focus {
     margin-left: 10rem;
     display: inline-block;
     width: 100%;
+    margin-top: 2rem;
 
 }
 
@@ -282,14 +316,27 @@ input:focus {
 .welcome-screen {
     position: relative;
     top: 10rem;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 400px;
     height: 100%;
+}
+
+.welcome-holder {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.not-logged {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -302,14 +349,10 @@ input:focus {
 }
 
 .home-icon {
-    width: 30rem;
+    width: 100%;
     position: relative;
     display: flex;
-}
-
-.item-results {
-    height: 100vh;
-    width: 80%;
+    max-width: 400px;
 }
 
 .items-searched {
@@ -337,9 +380,8 @@ input:focus {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 4rem;
-    top: 2rem;
     align-items: center;
+    width: 100%;
 }
 
 .titles {
@@ -357,31 +399,39 @@ input:focus {
 
 .movie-show-div {
     position: relative;
-    left: 8rem;
+    display: flex;
 }
 
 
 .movie-show {
     display: flex;
     position: relative;
-    top: 10rem;
+    width: 100%;
+    flex-direction: row;
 }
 
 .movie-show-poster {
-    width: 300px;
-    height: 533px;
+    width: 40%;
+    display: flex;
+    padding: 1rem;
+    max-width: 300px;
 
 }
 
+.season-poster-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 .movie-show-desc-holder {
-    position: absolute;
+    position: relative;
     display: flex;
     flex-direction: column;
     gap: 2rem;
     padding: 1rem;
-    left: 40rem;
     overflow-wrap: break-word;
-    width: 50%;
     align-items: center;
 }
 
@@ -415,9 +465,9 @@ input:focus {
 .avatar-holder {
     position: relative;
     display: flex;
-    bottom: 29%;
     gap: 1rem;
     align-items: center;
+    width: 100%;
 }
 
 .rating {
@@ -433,7 +483,7 @@ input:focus {
 }
 
 .movie-logo {
-    width: 200px;
+    width: 30%;
 }
 
 .select-seasons {
@@ -460,6 +510,11 @@ input:focus {
     width: 100px;
 }
 
+.season-position {
+    width: 100%;
+    padding: 1rem;
+}
+
 .season-display {
     position: relative;
     display: flex;
@@ -476,12 +531,104 @@ h5 {
     position: relative;
     font-family: 'Bebas Neue';
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 14px;
     display: flex;
 }
 
-.form-select {
-    position: absolute;
-    left: 6rem;
-    top: 14rem;
+.movie-div {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 10px;
+}
+
+
+@media screen and (max-width:641px) {
+    .movie-show {
+        flex-direction: column;
+    }
+
+    .movie-show-poster {
+        width: 60%;
+    }
+
+    .movie-show-title {
+        font-size: 20px;
+    }
+
+    .movie-show-desc {
+        font-size: 12px;
+    }
+
+    .episode-overview {
+        font-size: 12px;
+    }
+
+}
+
+@media screen and (max-width:380px) {
+    .movie-show {
+        flex-direction: column;
+    }
+
+    .movie-show-title {
+        font-size: 18px;
+    }
+
+    .movie-show-desc {
+        font-size: 10px;
+    }
+
+    .movie-show-desc {
+        font-size: 12px;
+    }
+
+    .episode-overview {
+        font-size: 12px;
+    }
+
+    .side-bar {
+        width: 50px;
+    }
+
+    .movie-div {
+        left: 50px;
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 481px) {
+    .movie-show {
+        flex-direction: column;
+    }
+
+    .movie-show-title {
+        font-size: 18px;
+    }
+
+    .movie-show-desc {
+        font-size: 12px;
+    }
+
+    .movie-show-poster {
+        width: 80%;
+    }
+
+
+    .episode-overview {
+        font-size: 12px;
+    }
+
+    .side-bar {
+        width: 50px;
+    }
+
+    .movie-div {
+        left: 50px;
+        width: 90%;
+    }
+
 }

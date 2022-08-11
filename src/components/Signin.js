@@ -43,9 +43,11 @@ const Signin = () => {
 
     return (
         <div>
-            <Link to='/'>
-                <img id='netflixicon' src={netflixicon} alt='netflixicon'></img>
-            </Link>
+            <div className='img-holder'>
+                <Link to='/' className='sign-icon'>
+                    <img src={netflixicon} alt='netflixicon'></img>
+                </Link>
+            </div>
             <form className='formclassin' onSubmit={onSignIn} >
                 <div className='inputholder'>
                     <label htmlFor="email"> Email:</label>

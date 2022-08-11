@@ -10,6 +10,7 @@ const Movies = ({ movie }) => {
     const [viewMovie, setView] = useState({})
 
     useEffect(() => {
+
         Axios.get(`https://api.themoviedb.org/3/movie/${movie}?api_key=2b4be7ed8b7df2bdf21fdf994029d9f8`)
             .then(response => {
                 setView(response.data)
@@ -17,11 +18,11 @@ const Movies = ({ movie }) => {
     }, [movie])
 
     return (
-        <div className='movie-show-div'>
+        <div className='movie-div'>
             {console.log(viewMovie)}
-            {Object.keys(viewMovie).length > 0 ? <div className='movie-show'>
-                <img className='movie-show-poster' src={baseurl + viewMovie['poster_path']} alt='movieimage'></img>
-                <div className='movie-show-desc-holder'>
+            {Object.keys(viewMovie).length > 0 ?
+                <>
+                    <img className='movie-show-poster' src={baseurl + viewMovie['poster_path']} alt='movieimage'></img>
                     <h1 className='movie-show-title'>{viewMovie['original_title']}</h1>
                     <h4 className='movie-show-desc'>{viewMovie['overview']}</h4>
                     <BsPlayCircleFill className='play' />
@@ -37,21 +38,15 @@ const Movies = ({ movie }) => {
                             </>
                         )}
                     </div>
-
-
-                    <div className='company-holder'>
+                    <div className='avatar-holder'>
                         {viewMovie['production_companies'].map(item =>
                             <>
-                                <img className='movie-logo' src={baseurl + item['logo_path']}></img>
+                                <img className='movie-logo' src={baseurl + item['logo_path']} alt='logo'></img>
                                 <h4 className='movie-show-desc'>{item['name']}</h4>
                             </>
                         )}
                     </div>
-
-                </div>
-
-
-            </div> : <p>No Movie Currently Selected</p>}
+                </> : <p>No Movie Currently Selected</p>}
 
         </div>
     )
