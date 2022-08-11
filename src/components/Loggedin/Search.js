@@ -7,16 +7,11 @@ const Search = ({ setComponent, movieSetter, showSetter }) => {
     const [searchValue, setValue] = useState('')
     const [searchResults, setResults] = useState({})
 
-    useEffect(() => {
-        const getData = async (value) => {
-            const data = await Axios.get(`https://api.themoviedb.org/3/search/multi?query=${value}&language=en-US&api_key=2b4be7ed8b7df2bdf21fdf994029d9f8`)
-            setResults(data)
-    
-        }
+    const getData = async (value) => {
+        const data = await Axios.get(`https://api.themoviedb.org/3/search/multi?query=${value}&language=en-US&api_key=2b4be7ed8b7df2bdf21fdf994029d9f8`)
+        setResults(data)
 
-    })
-
-
+    }
 
     return (
         <div className='margin-panel'>

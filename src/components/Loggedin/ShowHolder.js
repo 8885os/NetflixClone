@@ -5,7 +5,6 @@ const ShowHolder = ({ items, setComponent, showSetter }) => {
     const baseurl = "https://image.tmdb.org/t/p/original"
 
     const setItem = (itemid) => {
-        console.log(itemid)
         showSetter(itemid)
         setComponent({
             homeShown: false,

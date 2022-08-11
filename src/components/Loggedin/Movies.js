@@ -19,7 +19,6 @@ const Movies = ({ movie }) => {
 
     return (
         <div className='movie-div'>
-            {console.log(viewMovie)}
             {Object.keys(viewMovie).length > 0 ?
                 <>
                     <img className='movie-show-poster' src={baseurl + viewMovie['poster_path']} alt='movieimage'></img>

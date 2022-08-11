@@ -42,7 +42,6 @@ const MixHolder = ({ items, setComponent, movieSetter, showSetter }) => {
 
     return (
         <div className='slider'>
-            {console.log(items)}
             {items.map(item => (
                 <div key={`mix${item.id}`} className='item' >
                     <img loading='lazy' className='item-poster-slider' src={baseurl + item['poster_path']} alt='movieimage' onClick={() => setItem(item, item.id)}></img>

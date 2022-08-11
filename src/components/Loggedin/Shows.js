@@ -36,7 +36,6 @@ const Shows = ({ show }) => {
 
     return (
         <div className='movie-show-div'>
-            {console.log(viewShow)}
             {Object.keys(viewShow).length > 0 ?
                 <div className='movie-show'>
                     <div className='season-poster-holder'>
